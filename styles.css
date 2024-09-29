@@ -473,30 +473,3 @@ main {
         width: 100%; /* Make buttons full width */
     }
 }
-/* Navigation Styles */
-.navbar-links {
-    display: none; /* Hide the navbar links by default */
-    flex-direction: column; /* Stack links vertically */
-    position: absolute; /* Position it absolutely */
-    background-color: #fff; /* Background color for the dropdown */
-    width: 100%; /* Full width */
-    z-index: 1000; /* Ensure it appears above other content */
-}
-
-.nav-toggle:checked + .nav-toggle-label + .navbar-links {
-    display: flex; /* Show the navbar links when the checkbox is checked */
-}
-
-.nav-toggle-label {
-    cursor: pointer; /* Change cursor to pointer for the label */
-}
-
-/* Optional: Style for the hamburger icon */
-.nav-toggle-label span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: #333;
-    margin: 5px auto;
-    transition: all 0.3s;
-}
