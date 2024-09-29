@@ -5,19 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CTU-Buddy - Share Resources</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url(PICTURES/image.webp);
+            background-size: auto;
+        }
+    </style>
 </head>
 <body>
-    <style>
-         body {
-        background-image: url(PICTURES/image.webp);
-        background-size:auto;
-    }
-    </style>
     <header>
-        <h1 style="color: rgb(255, 255, 255); font-size: xx-large; background-image: url(https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg) ">Share Resources</h1>
+        <h1 style="color: rgb(255, 255, 255); font-size: xx-large; background-image: url(https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg)">Share Resources</h1>
         <nav>
             <div class="navbar-brand">
-                <a href="discussion.html"><img src="PICTURES\2024-08-24 (6).png" lt="no image"class="thumbnail"></a>
+                <a href="discussion.html"><img src="PICTURES/2024-08-24 (6).png" alt="no image" class="thumbnail"></a>
             </div>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
@@ -37,35 +37,27 @@
     </header>
     
     <main>
-        <section<section class="upload-section"></section>>
+        <section class="upload-section">
             <h2>Upload and Share</h2>
             <p>Upload educational resources in PDF format to share with others.</p>
-            <form action="/upload" method="post" enctype="multipart/form-data">
+            <form id="uploadForm" enctype="multipart/form-data">
                 <label for="file">Select a PDF to upload:</label>
                 <input type="file" id="file" name="file" accept="application/pdf" required>
                 <button type="submit">Upload PDF</button>
-                       
-                </form>
             </form>
+            <h3>Available Resources:</h3>
+            <div id="resources"></div>
         </section>
     </main>
-    <br><br/>
-    <br><br/>
-    <br><br/>
-    <br><br/>
-    <br><br/>
-    <br><br/>
-    <br><br/>
-    <br><br/>
-    <br><br/>
-    <div style="background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg'); background-size: cover; padding: 20px; border-radius: 10px; text-align: center; max-width: 1250px; margin: auto;">
 
+    <div style="background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg'); background-size: cover; padding: 20px; border-radius: 10px; text-align: center; max-width: 1250px; margin: auto;">
         <footer style="margin-bottom: 20px;">
             <p style="color: white; font-weight: bold; margin: 0;">&copy; 2024 CTU-Buddy. All Rights Reserved.</p>
             <a href="home.html" style="color: white; text-decoration: none; margin-right: 30px;">Go back to Home</a>
-        <a href="discussion.html" style="color: white; text-decoration: none;">Go to Discussion</a>
+            <a href="discussion.html" style="color: white; text-decoration: none;">Go to Discussion</a>
         </footer>
-        
-    </div>        
+    </div>
+
+    <script src="js/upload.js"></script>
 </body>
 </html>
