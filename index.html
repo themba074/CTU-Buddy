@@ -9,6 +9,12 @@
         body {
             background-image: url(PICTURES/image.webp);
             background-size: auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        footer {
+            margin-top: auto; /* Push the footer to the bottom */
         }
     </style>
 </head>
@@ -40,29 +46,29 @@
         <section class="upload-section">
             <h2>Upload and Share</h2>
             <p>Upload educational resources in PDF format to share with others.</p>
-            <form id="uploadForm" enctype="multipart/form-data">
+            <form action="/upload" method="post" enctype="multipart/form-data">
                 <label for="file">Select a PDF to upload:</label>
                 <input type="file" id="file" name="file" accept="application/pdf" required>
                 <button type="submit">Upload PDF</button>
             </form>
-            <h3>Available Resources:</h3>
-            <div id="resources"></div>
+        </section>
+
+        <section class="download-section">
+            <h2>Download Available Resources</h2>
+            <ul id="downloadList">
+                <!-- Example links, replace with server-side logic to generate these -->
+               
+            
+            </ul>
         </section>
     </main>
-<br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
+
     <div style="background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg'); background-size: cover; padding: 20px; border-radius: 10px; text-align: center; max-width: 1250px; margin: auto;">
         <footer style="margin-bottom: 20px;">
             <p style="color: white; font-weight: bold; margin: 0;">&copy; 2024 CTU-Buddy. All Rights Reserved.</p>
             <a href="home.html" style="color: white; text-decoration: none; margin-right: 30px;">Go back to Home</a>
             <a href="discussion.html" style="color: white; text-decoration: none;">Go to Discussion</a>
         </footer>
-    </div>
-
-    <script src="js/upload.js"></script>
+    </div>        
 </body>
 </html>
