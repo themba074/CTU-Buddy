@@ -5,88 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CTU-Buddy - About Us</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        table, th, td {
-            border: 1px solid #ddd;
-        }
-
-        th, td {
-            padding: 15px;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        /* Adjust profile images to fit within a defined space */
-        table img {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        /* Mission image styles */
-        .mission img {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
-
-        /* Navbar logo */
-        .navbar-brand img {
-            width: 100px;
-            height: auto;
-        }
-
-        /* Footer styles */
-        footer {
-            background-color: #333;
-            padding: 20px;
-            text-align: center;
-            color: white;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            table img {
-                width: 100px;
-                height: 100px;
-            }
-        }
-    </style>
 </head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        text-align: center;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    th, td {
+        padding: 15px;
+    }
+    th {
+        background-color: #f2f2f2;
+    }
+    img {
+        width: 150px;
+        height: 300px;
+        object-fit: cover; /* Ensures the image maintains aspect ratio within the square */
+        border-radius: 0;
+    }
+</style>
 <body>
     <header>
-        <h1 style="color: #fff; font-size: xx-large; background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg'); background-size: cover; text-align: center; padding: 20px;">
-            About Us
-        </h1>
+        <h1 style="color: rgb(255, 255, 255); font-size: xx-large; background-image: url(https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg)">About Us</h1>
         <nav>
             <div class="navbar-brand">
-                <a href="about_us.html"><img src="PICTURES/2024-08-24 (6).png" alt="CTU-Buddy Logo"></a>
+                <a href="about_us.html"><img src="PICTURES/2024-08-24 (6).png" alt="CTU-Buddy Logo" class="thumbnail"></a>
             </div>
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
@@ -107,13 +55,14 @@
     
     <main>
         <section class="mission">
-            <fieldset> 
-                <img src="PICTURES/culture-1-1.jpg" alt="Mission Image"> 
-                <div class="text-center">
-                    <h2>Our Mission</h2>
-                    <p>Our mission is to transform and elevate the learning experience through a relentless commitment to innovation and technology. We strive to create a dynamic and immersive educational environment that adapts to the evolving needs of our students and the demands of the modern world.</p>
-                </div>
-            </fieldset>
+           <fieldset> 
+    <img src="PICTURES/culture-1-1.jpg" alt="Mission Image" style="width: 100%; max-width: 500px; height: auto;"> 
+    <div class="text-center">
+        <h2>Our Mission</h2>
+        <p>Our mission is to transform and elevate the learning experience through a relentless commitment to innovation and technology. We strive to create a dynamic and immersive educational environment that adapts to the evolving needs of our students and the demands of the modern world.</p>
+    </div>
+</fieldset>
+
             <br><br/>
             <h2>The Team</h2>
             <p>Meet the individuals behind CTU-Buddy.</p>
@@ -147,5 +96,6 @@
             <a href="contact_us.html" style="color: white; text-decoration: none; display: inline-block;">Go to Contact Us</a>
         </div>
     </div>
+    
 </body>
 </html>
