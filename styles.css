@@ -39,40 +39,6 @@ nav {
     font-weight: bold;
 }
 
-/* Hamburger Menu Styles */
-.nav-toggle {
-    display: none; /* Hidden by default */
-}
-
-.nav-toggle-label {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    height: 24px;
-    width: 30px;
-}
-
-.nav-toggle-label span {
-    width: 100%;
-    height: 3px;
-    background-color: rgb(31, 15, 15);
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Show hamburger when checked */
-.nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
-    transform: translateY(9px) rotate(45deg);
-}
-
-.nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
-    opacity: 0; /* Hide middle line */
-}
-
-.nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
-    transform: translateY(-9px) rotate(-45deg);
-}
-
-/* Navbar Links */
 .navbar-links {
     list-style: none;
     display: flex;  /* Display horizontally by default */
@@ -106,7 +72,33 @@ nav {
     color: white;
 }
 
-/* Show navbar on hamburger click */
+/* Hamburger Menu */
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 24px;
+    width: 30px;
+    justify-content: space-between;
+    animation: bounce 0.5s ease-in-out;
+}
+
+.nav-toggle-label span {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(31, 15, 15);
+    transition: transform 0.3s ease;
+}
+
+/* Show hamburger menu regardless of screen size */
+.nav-toggle:checked + .nav-toggle-label span {
+    background-color: rgb(157, 188, 235);
+}
+
 .nav-toggle:checked + .nav-toggle-label + .navbar-links {
     max-height: 200px; /* Adjust as needed to fit content */
 }
@@ -120,6 +112,11 @@ nav {
 @keyframes slideIn {
     from { transform: translateY(-20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.7); }
 }
 
 /* Image Styling */
@@ -168,6 +165,7 @@ nav {
 
 /* Footer */
 .footer {
+    
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -260,21 +258,18 @@ tbody tr:hover {
         font-weight: bold;
         text-align: left;
     }
-
-    .navbar-links {
-        display: none; /* Hide links initially */
-        flex-direction: column; /* Stack links vertically */
-    }
-
-    .navbar-links.show {
-        display: flex; /* Show links when hamburger is clicked */
-    }
-
-    .nav-toggle {
-        display: block; /* Show hamburger icon */
-    }
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
 /* Main Content Styling */
 main {
     padding: 20px;
@@ -342,7 +337,76 @@ main {
 .featured-image {
     width: 100%;
     max-width: 1200px;
-    height: auto;
-    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contact-form {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
     margin: 0 auto;
+}
+
+.contact-form fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-form legend {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.contact-form button {
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.contact-form button:active {
+    background-color: #004494;
+    transform: translateY(0);
 }
