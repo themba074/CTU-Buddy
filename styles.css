@@ -7,8 +7,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url(PICTURES/image.webp);
-    background-size: cover; /* Changed to cover for better fitting */
+    background-color: #f0f2f5;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -33,7 +32,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    animation: slideIn 0.5s ease-in-out;
 }
 
 .navbar-brand a {
@@ -47,7 +45,6 @@ nav {
     list-style: none;
     display: flex;  /* Display horizontally by default */
     flex-direction: row;
-    text-align: center;
     transition: max-height 0.3s ease;
     overflow: hidden;
     max-height: 0; /* Hide initially */
@@ -88,7 +85,6 @@ nav {
     height: 24px;
     width: 30px;
     justify-content: space-between;
-    animation: bounce 0.5s ease-in-out;
 }
 
 .nav-toggle-label span {
@@ -112,24 +108,6 @@ nav {
     to { opacity: 1; }
 }
 
-@keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes bounce {
-    0%, 100% { transform: scaleY(1); }
-    50% { transform: scaleY(0.7); }
-}
-
-/* Image Styling */
-.thumbnail {
-    width: 50px;
-    height: auto;
-    border-radius: 5px;
-    animation: fadeIn 1s ease-in-out;
-}
-
 /* Section Styling */
 .info-fieldset {
     background-color: white;
@@ -139,33 +117,6 @@ nav {
     border: 1px solid #ccc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     animation: fadeIn 2s ease-in-out;
-}
-
-.content-image-left,
-.content-image-right {
-    width: 300px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.content-image-left {
-    float: left;
-    margin-right: 15px;
-}
-
-.content-image-right {
-    float: right;
-    margin-left: 15px;
-}
-
-/* Feature List */
-.feature-list {
-    list-style: none;
-    padding: 0;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.feature-list li {
-    margin: 10px 0;
 }
 
 /* Footer */
@@ -187,199 +138,23 @@ nav {
     color: lightblue;
 }
 
-/* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
-}
-
-th, td {
-    padding: 12px 15px;
-    border: 1px solid #5b4040;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-thead {
-    background-color: #9abad0;
-    color: #333;
-    font-weight: bold;
-    animation: slideIn 0.5s ease-in-out; /* Add slide-in animation */
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-tbody tr:hover {
-    background-color: #f1f1f1;
-    transform: scale(1.02); /* Slightly enlarge row on hover */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-}
-
-.Breaks tr td {
-    background-color: black;
-    color: black;
-}
-
 /* Responsive Design */
-@media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
+@media (max-width: 600px) {
+    .header-title {
+        font-size: 1.5em; /* Adjust header font size for smaller screens */
     }
 
-    th, td {
-        padding: 10px;
+    nav {
+        flex-direction: column; /* Stack navbar items vertically */
     }
 
-    thead {
-        display: none;
+    .navbar-links {
+        flex-direction: column; /* Stack navbar items vertically */
     }
 
-    tr {
-        margin-bottom: 10px;
-        background-color: #f9f9f9; /* Add background color for blocks */
+    body {
+        padding: 10px; /* Reduce padding for smaller screens */
     }
 
-    td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        background-color: #fff; /* Background color for table cells */
-        border: 1px solid #ddd; /* Border for cells */
-    }
-
-    td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 10px;
-        font-weight: bold;
-        text-align: left;
-    }
-}
-
-/* Main Content Styling */
-main {
-    flex: 1; /* Allow main to take up remaining space */
-    padding: 20px;
-}
-
-/* Discussion Section */
-.discussion-section {
-    text-align: center;
-    margin: 0 auto;
-}
-
-.discussion-section h2 {
-    margin-bottom: 10px;
-    font-size: 2rem;
-    color: #333;
-}
-
-.discussion-section p {
-    margin-bottom: 20px;
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Discussion Form */
-.discussion-form {
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.discussion-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-}
-
-.discussion-form textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #333;
-}
-
-.discussion-form button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.discussion-form button:hover {
-    background-color: #0056b3;
-}
-
-/* Featured Image */
-.featured-image {
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact Form */
-.contact-form {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-}
-
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form input[type="tel"],
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #218838;
+    /* Add more responsive styles as needed */
 }
