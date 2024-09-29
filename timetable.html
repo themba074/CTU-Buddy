@@ -6,89 +6,123 @@
     <title>CTU-Buddy - Timetable</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-    /* Table Styling */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-}
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 18px;
+            text-align: left;
+        }
 
-th, td {
-    padding: 12px 15px;
-    border: 1px solid #5b4040;
-}
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #5b4040;
+        }
 
-thead {
-    background-color: #9abad0;
-    color: #333;
-    font-weight: bold;
-}
+        thead {
+            background-color: #9abad0;
+            color: #333;
+            font-weight: bold;
+        }
 
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
-tbody tr:hover {
-    background-color: #f1f1f1;
-}
+        tbody tr:hover {
+            background-color: #f1f1f1;
+        }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
 
-    th, td {
-        padding: 10px;
-    }
+            th, td {
+                padding: 10px;
+            }
 
-    thead {
-        display: none;
-    }
+            thead {
+                display: none;
+            }
 
-    tr {
-        margin-bottom: 10px;
-    }
+            tr {
+                margin-bottom: 10px;
+            }
 
-    td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-    }
+            td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+            }
 
-    td:before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 10px;
-        font-weight: bold;
-        text-align: left;
-   
-}
-.Breaks tr td {
-    background-color: black;
-    color: black;
-}
-}
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 0;
+                width: 50%;
+                padding-left: 10px;
+                font-weight: bold;
+                text-align: left;
+            }
+        }
 
+        .Breaks tr td {
+            background-color: black;
+            color: black;
+        }
 
+        /* Additional Styles */
+        header h1 {
+            color: rgb(255, 255, 255);
+            font-size: xx-large;
+            background-image: url(https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg);
+            padding: 20px;
+            text-align: center;
+        }
 
-</style>
+        fieldset {
+            background-image: url(https://img.freepik.com/free-vector/realistic-blue-sky-background_1048-6707.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724457600&semt=ais_hybrid);
+            width: 100%;
+            border: none;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg');
+            background-size: cover;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        footer p {
+            color: white;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1 style="color: rgb(255, 255, 255); font-size: xx-large; background-image: url(https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg) ">Timetable</h1>
+        <h1>Timetable</h1>
         <nav>
             <div class="navbar-brand">
                 <a href="home.html">
-                    <img src="PICTURES\2024-08-24 (6).png" alt="no image" class="thumbnail">
+                    <img src="PICTURES/2024-08-24 (6).png" alt="no image" class="thumbnail">
                 </a>
-                
             </div>
-           
             <input type="checkbox" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label">
                 <span></span>
@@ -105,14 +139,12 @@ tbody tr:hover {
             </ul>
         </nav>
     </header>
-    <br> 
     <main>
         <section>
-            <fieldset style="background-image: url(https://img.freepik.com/free-vector/realistic-blue-sky-background_1048-6707.jpg?size=338&ext=jpg&ga=GA1.1.2008272138.1724457600&semt=ais_hybrid); width: 1300px;">
-            <h2>Weekly Schedule</h2>
-        </fieldset>
-            <br>
-            <p>Here is where you will find your Weekly Schedule for the semester for your choosen programme</p>
+            <fieldset>
+                <h2>Weekly Schedule</h2>
+            </fieldset>
+            <p>Here is where you will find your Weekly Schedule for the semester for your chosen programme</p>
             <table>
                 <thead>
                     <tr>
@@ -158,7 +190,7 @@ tbody tr:hover {
                         <td>CF</td>
                     </tr>
                     <tr style="background-color: black; color: rgb(255, 255, 255);">
-                        <td style="background-color: rgb(230, 231, 228 ); color: black;">12:00 - 13:00</td>
+                        <td style="background-color: rgb(230, 231, 228); color: black;">12:00 - 13:00</td>
                         <td>BREAK</td>
                         <td>BREAK</td>
                         <td>BREAK</td>
@@ -170,7 +202,7 @@ tbody tr:hover {
                         <td>CAF</td>
                         <td>ENA</td>
                         <td>PRP (Pract)</td>
-                        <td>FDM(NON COMPULSORY)</td>
+                        <td>FDM (NON COMPULSORY)</td>
                         <td style="background-color: black;"></td>
                     </tr>
                     <tr>
@@ -178,25 +210,17 @@ tbody tr:hover {
                         <td>CAF</td>
                         <td>ENA</td>
                         <td>PRP (Pract)</td>
-                        <td>FDM(NON COMPULSORY)</td>
+                        <td>FDM (NON COMPULSORY)</td>
                         <td style="background-color: black;"></td>
                     </tr>
-                
                 </tbody>
             </table>
         </section>
     </main>
-
-    
-    <div style="background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg'); background-size: cover; padding: 20px; border-radius: 10px; text-align: center; max-width: 1250px; margin: auto;">
-        <footer style="margin-bottom: 20px;">
-            <p style="color: white; font-weight: bold; margin: 0;">&copy; 2024 CTU-Buddy. All Rights Reserved.</p>
-        </footer>
-        <a href="home.html" style="color: white; text-decoration: none; margin-right: 15px;">Go back to Home</a>
-        <a href="discussion.html" style="color: white; text-decoration: none; margin-left: 15px;">Go to Discussion</a>
-    </div>
-    
-    
-
+    <footer>
+        <p>&copy; 2024 CTU-Buddy. All Rights Reserved.</p>
+        <a href="home.html">Go back to Home</a>
+        <a href="discussion.html">Go to Discussion</a>
+    </footer>
 </body>
 </html>
