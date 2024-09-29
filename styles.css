@@ -39,6 +39,40 @@ nav {
     font-weight: bold;
 }
 
+/* Hamburger Menu Styles */
+.nav-toggle {
+    display: none; /* Hidden by default */
+}
+
+.nav-toggle-label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 24px;
+    width: 30px;
+}
+
+.nav-toggle-label span {
+    width: 100%;
+    height: 3px;
+    background-color: rgb(31, 15, 15);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Show hamburger when checked */
+.nav-toggle:checked + .nav-toggle-label span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(2) {
+    opacity: 0; /* Hide middle line */
+}
+
+.nav-toggle:checked + .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Navbar Links */
 .navbar-links {
     list-style: none;
     display: flex;  /* Display horizontally by default */
@@ -50,7 +84,7 @@ nav {
 }
 
 .navbar-links.show {
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px; /* Adjust as needed to fit content */
 }
 
 .navbar-links li {
@@ -72,32 +106,9 @@ nav {
     color: white;
 }
 
-/* Hamburger Menu */
-.nav-toggle {
-    display: none;
-}
-
-.nav-toggle-label {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    height: 24px;
-    width: 30px;
-}
-
-.nav-toggle-label span {
-    width: 100%;
-    height: 3px;
-    background-color: rgb(31, 15, 15);
-    transition: transform 0.3s ease;
-}
-
-.nav-toggle:checked + .nav-toggle-label span {
-    background-color: rgb(157, 188, 235);
-}
-
+/* Show navbar on hamburger click */
 .nav-toggle:checked + .nav-toggle-label + .navbar-links {
-    max-height: 200px; /* Adjust as needed */
+    max-height: 200px; /* Adjust as needed to fit content */
 }
 
 /* Animations */
@@ -130,17 +141,18 @@ nav {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Image Positioning */
 .content-image-left {
     float: left;
     margin-right: 15px;
     width: 300px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 .content-image-right {
     float: right;
     margin-left: 15px;
     width: 300px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Feature List */
@@ -180,28 +192,31 @@ table {
     margin: 20px 0;
     font-size: 18px;
     text-align: left;
-    animation: fadeIn 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
 }
 
 th, td {
     padding: 12px 15px;
     border: 1px solid #5b4040;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 thead {
     background-color: #9abad0;
     color: #333;
     font-weight: bold;
+    animation: slideIn 0.5s ease-in-out; /* Add slide-in animation */
 }
 
 tbody tr:nth-child(even) {
     background-color: #f9f9f9;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 tbody tr:hover {
     background-color: #f1f1f1;
-    transform: scale(1.02);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02); /* Slightly enlarge row on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow effect */
 }
 
 .Breaks tr td {
@@ -232,6 +247,7 @@ tbody tr:hover {
         text-align: right;
         padding-left: 50%;
         position: relative;
+        background-color: #fff; /* Background color for table cells */
         border: 1px solid #ddd; /* Border for cells */
     }
 
@@ -243,6 +259,19 @@ tbody tr:hover {
         padding-left: 10px;
         font-weight: bold;
         text-align: left;
+    }
+
+    .navbar-links {
+        display: none; /* Hide links initially */
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    .navbar-links.show {
+        display: flex; /* Show links when hamburger is clicked */
+    }
+
+    .nav-toggle {
+        display: block; /* Show hamburger icon */
     }
 }
 
@@ -310,73 +339,10 @@ main {
     background-color: #0056b3;
 }
 
-/* Featured Image Styling */
 .featured-image {
     width: 100%;
     max-width: 1200px;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Contact Form Styling */
-.contact-form {
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.contact-form fieldset {
-    border: none;
-}
-
-.contact-form legend {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333;
-    font-weight: bold;
-    text-align: center;
-}
-
-.contact-form label {
+    height: auto;
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-.contact-form button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
+    margin: 0 auto;
 }
