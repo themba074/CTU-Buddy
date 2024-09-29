@@ -410,3 +410,43 @@ main {
     background-color: #004494;
     transform: translateY(0);
 }
+body {
+    background-image: url(PICTURES/image.webp);
+    background-size: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0; /* Reset margin to ensure full height */
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional background for better readability */
+    color: white;
+}
+
+main {
+    flex: 1; /* Allow main to take up remaining space */
+    padding: 20px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional background for better readability */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em; /* Adjust header font size for smaller screens */
+    }
+
+    .navbar-links {
+        flex-direction: column; /* Stack navbar items vertically */
+    }
+
+    main {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+}
