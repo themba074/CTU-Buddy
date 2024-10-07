@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CTU-Buddy - Discussion</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .discussion-form {
-            margin-bottom: 20px;
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -39,28 +34,40 @@
         <section class="discussion-section">
             <h2>Join the Conversation</h2>
             <p>Post your questions and engage with peers.</p>
-            <form id="questionForm" class="discussion-form">
+            
+            <!-- Form for submitting a question -->
+            <form class="discussion-form" method="POST" action="post_response.php">
                 <label for="name">Please enter your Name:</label>
                 <input type="text" id="name" name="name" required>
                 <label for="question">Your Question:</label>
                 <textarea id="question" name="question" required></textarea>
                 <button type="submit">Submit Question</button>
             </form>
-            <div id="questionsList"></div>
+
+            <!-- Form for responding to a question -->
+            <form class="discussion-form" method="POST" action="post_response.php">
+                <label for="question_id">Respond to Question:</label>
+                <input type="number" id="question_id" name="question_id" required placeholder="Enter Question ID">
+                <label for="respond_to_question">Response:</label>
+                <input type="text" id="name_response" name="name" required placeholder="Your Name">
+                <textarea id="response" name="response" required></textarea>
+                <button type="submit">Submit Response</button>
+            </form>
+            
+            <img src="PICTURES/Togetherness-Featured-Image.png" alt=" no image" class="featured-image">
         </section>
     </main>
     
-    <div class="footer-container">
-        <div style="background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg'); background-size: cover; padding: 20px; border-radius: 10px; text-align: center; max-width: 1250px; margin: auto;">
-            <footer style="margin-bottom: 20px;">
-                <p style="color: white; font-weight: bold; margin: 0;">&copy; 2024 CTU-Buddy. All Rights Reserved.</p>
-            </footer>
-            <a href="timetable.html" class="footer-link">Go to Timetable</a>
-             <a href="share_resources.html" class="footer-link">Go to Share Resources</a>
+    <footer>
+        <div>
+            <div class="footer-container">
+                <footer style="margin-bottom: 20px;">
+                    <p style="color: white; font-weight: bold; margin: 0;">&copy; 2024 CTU-Buddy. All Rights Reserved.</p>
+                    <a href="timetable.html" class="footer-link">Back to Timetable</a>
+                    <a href="share_resources.html" class="footer-link">Go to Share Resources</a>
+                </footer>
+            </div>
         </div>
-       
-    </div>
-
-    <script src="js/discussion.js"></script>
+    </footer>
 </body>
 </html>
