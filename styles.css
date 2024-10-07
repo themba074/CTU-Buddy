@@ -13,14 +13,47 @@ body {
 /* Header Styles */
 .header-title {
     color: white;
-    font-size: 3rem;
+    font-size: 2rem; /* Reduced size for better fit */
     background-image: url(https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg);
     background-size: cover;
+    background-position: center; /* Center the background image */
     text-align: center;
-    padding: 20px;
-    margin-bottom: 30px;
+    padding: 15px; /* Adjusted padding for better spacing */
+    margin-bottom: 20px; /* Slightly reduced margin */
     animation: fadeIn 2s ease-in;
 }
+.footer-container {
+    background-image: url('https://images.vexels.com/media/users/3/101746/raw/da01a24b356c2778b7374e174b4806b9-light-blue-abstract-background.jpg');
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    padding: 20px; /* Add some padding for spacing */
+    border-radius: 10px; /* Round the corners */
+    text-align: center; /* Center align the text */
+    margin: 20px auto; /* Center the footer horizontally with some margin */
+    max-width: 100%; /* Ensure it takes full width, adjust if necessary */
+    color: white; /* Set text color to white */
+}
+
+.footer-container footer {
+    margin-bottom: 10px; /* Add spacing between footer and the link */
+}
+
+.footer-container p {
+    font-weight: bold; /* Make the text bold */
+    margin: 0; /* Remove default margin */
+}
+
+.footer-container a {
+    color: white; /* Set the link color to white */
+    text-decoration: underline; /* Underline the link */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.footer-container a:hover {
+    color: lightblue; /* Change link color on hover */
+}
+
+
 
 /* Navigation Bar */
 nav {
